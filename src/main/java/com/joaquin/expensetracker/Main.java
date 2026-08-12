@@ -1,15 +1,22 @@
 package com.joaquin.expensetracker;
 
 import com.joaquin.expensetracker.model.Expense;
+import com.joaquin.expensetracker.service.ExpenseManager;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Expense coffe = new Expense("Coffee", 5500);
+        Expense coffee = new Expense("Coffee", 5500);
+        Expense lunch = new Expense("Lunch", 12000);
+        Expense uber = new Expense("Uber", 9500);
 
-        Expense testOne = new Expense("Test one", -1);
+        ExpenseManager testManager = new ExpenseManager();
 
-        Expense testTwo = new Expense("", 6000);
+        testManager.addExpense(coffee);
+        testManager.addExpense(lunch);
+        testManager.addExpense(uber);
+        testManager.showAllExpenses();
+        System.out.println("Total amount: $" + testManager.getTotalAmount());
     }
 }

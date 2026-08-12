@@ -33,4 +33,8 @@ public class Expense {
     public double getAmount() {
         return amount;
     }
+
+    public String show() {
+         return this.description + " - $" + this.amount;
+    }
 }
